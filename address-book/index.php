@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="css/custom.css">
 		<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
 	</head>
-	<body style="background-image: url('login.jpg');"> 
+	<body>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
@@ -40,8 +40,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- -----------Login ---------------- -->
-		<div class="modal fade" id="loginPop" tabindex="-1" role="dialog" style="background-image: url('3.jpg');">
+		<!-- Login Modal -->
+		<div class="modal fade" id="loginPop" tabindex="-1" role="dialog">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header text-center">
@@ -82,8 +82,8 @@
 		  </div>
 		</div>
 
-		<!------------------- Registration ------------------  -->
-		<div class="modal fade" id="registerPop" tabindex="-1" role="dialog"style="background-image: url('register.jpg');" >
+		<!-- Registration Modal -->
+		<div class="modal fade" id="registerPop" tabindex="-1" role="dialog">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header text-center">

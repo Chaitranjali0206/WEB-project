@@ -1,5 +1,6 @@
 <?php
 	include('../../../include/db.php');	
+	session_start();
 	$fn = trim($_POST['fn']);
 	$ln = trim($_POST['ln']);		
 	$name = $fn.' '.$ln;
@@ -7,6 +8,7 @@
 	$email = trim($_POST['email']);
 	$permanant = trim($_POST['permanant']);
 	$temporary = trim($_POST['temporary']);
+	$uid = $_SESSION['UID'];
 	if(strlen($fn) > 0 && strlen($ln) > 0 && strlen($mobile) > 0 && strlen($email) > 0 && strlen($permanant) > 0 && strlen($temporary) > 0){
 		//if person is already added
 		$check = mysqli_query($con,"SELECT * FROM persons WHERE Email='$email' ");
@@ -14,7 +16,7 @@
 			echo '<p style="color: #9F6000;font-weight: bold;">This person is already added.</p>';
 		}
 		else{
-			mysqli_query($con,"INSERT INTO persons(Name,Mobile,Email,Permanant_Address,Temporary_Address) VALUES('$name','$mobile','$email','$permanant','$temporary') ");
+			mysqli_query($con,"INSERT INTO persons(Name,Mobile,Email,Permanant_Address,Temporary_Address,uid) VALUES('$name','$mobile','$email','$permanant','$temporary','$uid') ");
 			if(mysqli_error($con)==""){
 				echo '<p style="color: #4F8A10;font-weight: bold;">Person Added Successfully!</p>';
 			}

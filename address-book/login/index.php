@@ -6,10 +6,13 @@
 	if(strlen($username) > 0 && strlen(trim($_POST['password'])) > 0){
 		$check = mysqli_query($con,"SELECT * FROM users WHERE Username='$username' AND Password='$password' ");
 		if(mysqli_num_rows($check)==1){
-			//fetch details				
-			// ['id':'01','first-name':'name']
+			//fetch details	
+			//last login update
+			date_default_timezone_set('Asia/Kolkata');
+			$dateTime = date('d F Y h:i A');
+			mysqli_query($con,"UPDATE users SET Last_Login='$dateTime' WHERE Username='$username' ");			
 			$row = mysqli_fetch_assoc($check);
-			$_SESSION['UID'] = $row['ID'];                 
+			$_SESSION['UID'] = $row['ID'];
 			$_SESSION['First_Name'] = $row['First_Name'];
 			$_SESSION['Last_Name'] = $row['Last_Name'];
 			$_SESSION['Username'] = $row['Username'];
@@ -17,9 +20,6 @@
 			if($_SESSION['Last_Login']==""){
 				$_SESSION['Last_Login'] = "Never";
 			}
-			//last login update
-			$dateTime = date('d F Y h:i A');
-			mysqli_query($con,"UPDATE users SET Last_Login='$dateTime' WHERE Username='$username' ");
 			//success
 			echo '<p style="color: #4F8A10;font-weight: bold;">Login Successful. Redirecting...</p>';				
 		}

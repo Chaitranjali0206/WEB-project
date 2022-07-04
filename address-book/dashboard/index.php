@@ -15,7 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/custom.css">
 		<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
 	</head>
-	<body style="background-image: url('1.jpg');">
+	<body>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-1">
@@ -49,16 +49,16 @@
 				                        			<td>:</td>
 				                        			<td><?php echo $_SESSION['Username']; ?></td>
 				                        		</tr>
-				                        		<!-- <tr>
+				                        		<tr>
 				                        			<td>Last Login</td>
 				                        			<td>:</td>
-				                        			<td></td>
-				                        		</tr> -->
-				                        		<!-- <tr>
+				                        			<td><?php echo $_SESSION['Last_Login']; ?></td>
+				                        		</tr>
+				                        		<tr>
 				                        			<td>Persons in Address Book</td>
 				                        			<td>:</td>
-				                        			<td></td>
-				                        		</tr> -->
+				                        			<td><?php echo $personsCount; ?></td>
+				                        		</tr>
 				                        	</table>
 			                        	</div>
 			                        	<div class="col-sm-2"></div>   	

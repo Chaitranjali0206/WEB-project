@@ -12,8 +12,8 @@
 	</thead>
 	<tbody>
 		<?php 
-		
-			$res = mysqli_query($con,"SELECT * FROM persons");
+		$uid = $_SESSION['UID'];
+			$res = mysqli_query($con,"SELECT * FROM persons where uid='$uid'");
 			while($row = mysqli_fetch_array($res)){
 				echo '<tr id="'.$row['ID'].'">
 						<td>'.$row['Name'].'</td>

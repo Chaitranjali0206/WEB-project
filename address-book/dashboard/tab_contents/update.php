@@ -5,7 +5,8 @@
 			<form class="form-vertical" role="form" id="updatePersonForm">
 				<p class="text-center" id="updateRes"></p>
 				<?php
-					$fetch = mysqli_query($con,"SELECT * FROM persons");
+				$uid = $_SESSION['UID'];
+					$fetch = mysqli_query($con,"SELECT * FROM persons where uid='$uid'");
 					if(mysqli_num_rows($fetch)<=0){
 						echo '<h3 class="text-center font">No Records Found.</h3>';
 					}
